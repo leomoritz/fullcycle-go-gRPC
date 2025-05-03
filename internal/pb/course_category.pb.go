@@ -416,10 +416,11 @@ const file_proto_course_category_proto_rawDesc = "" +
 	"\x15UpdateCategoryRequest\x12(\n" +
 	"\bcategory\x18\x01 \x01(\v2\f.pb.CategoryR\bcategory\"6\n" +
 	"\x16DeleteCategoryResponse\x12\x1c\n" +
-	"\tisDeleted\x18\x01 \x01(\bR\tisDeleted2\x96\x03\n" +
+	"\tisDeleted\x18\x01 \x01(\bR\tisDeleted2\xf2\x03\n" +
 	"\x0fCategoryService\x12C\n" +
 	"\x0eCreateCategory\x12\x19.pb.CreateCategoryRequest\x1a\x14.pb.CategoryResponse\"\x00\x12G\n" +
-	"\x14CreateCategoryStream\x12\x19.pb.CreateCategoryRequest\x1a\x10.pb.CategoryList\"\x00(\x01\x12/\n" +
+	"\x14CreateCategoryStream\x12\x19.pb.CreateCategoryRequest\x1a\x10.pb.CategoryList\"\x00(\x01\x12Z\n" +
+	"!CreateCategoryStreamBidirectional\x12\x19.pb.CreateCategoryRequest\x1a\x14.pb.CategoryResponse\"\x00(\x010\x01\x12/\n" +
 	"\x0eListCategories\x12\t.pb.blank\x1a\x10.pb.CategoryList\"\x00\x12:\n" +
 	"\vGetCategory\x12\x13.pb.CategoryRequest\x1a\x14.pb.CategoryResponse\"\x00\x12C\n" +
 	"\x0eUpdateCategory\x12\x19.pb.UpdateCategoryRequest\x1a\x14.pb.CategoryResponse\"\x00\x12C\n" +
@@ -449,26 +450,28 @@ var file_proto_course_category_proto_goTypes = []any{
 	(*DeleteCategoryResponse)(nil), // 7: pb.DeleteCategoryResponse
 }
 var file_proto_course_category_proto_depIdxs = []int32{
-	0, // 0: pb.CategoryResponse.category:type_name -> pb.Category
-	0, // 1: pb.CategoryList.categories:type_name -> pb.Category
-	0, // 2: pb.UpdateCategoryRequest.category:type_name -> pb.Category
-	1, // 3: pb.CategoryService.CreateCategory:input_type -> pb.CreateCategoryRequest
-	1, // 4: pb.CategoryService.CreateCategoryStream:input_type -> pb.CreateCategoryRequest
-	4, // 5: pb.CategoryService.ListCategories:input_type -> pb.blank
-	5, // 6: pb.CategoryService.GetCategory:input_type -> pb.CategoryRequest
-	6, // 7: pb.CategoryService.UpdateCategory:input_type -> pb.UpdateCategoryRequest
-	5, // 8: pb.CategoryService.DeleteCategory:input_type -> pb.CategoryRequest
-	2, // 9: pb.CategoryService.CreateCategory:output_type -> pb.CategoryResponse
-	3, // 10: pb.CategoryService.CreateCategoryStream:output_type -> pb.CategoryList
-	3, // 11: pb.CategoryService.ListCategories:output_type -> pb.CategoryList
-	2, // 12: pb.CategoryService.GetCategory:output_type -> pb.CategoryResponse
-	2, // 13: pb.CategoryService.UpdateCategory:output_type -> pb.CategoryResponse
-	7, // 14: pb.CategoryService.DeleteCategory:output_type -> pb.DeleteCategoryResponse
-	9, // [9:15] is the sub-list for method output_type
-	3, // [3:9] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	0,  // 0: pb.CategoryResponse.category:type_name -> pb.Category
+	0,  // 1: pb.CategoryList.categories:type_name -> pb.Category
+	0,  // 2: pb.UpdateCategoryRequest.category:type_name -> pb.Category
+	1,  // 3: pb.CategoryService.CreateCategory:input_type -> pb.CreateCategoryRequest
+	1,  // 4: pb.CategoryService.CreateCategoryStream:input_type -> pb.CreateCategoryRequest
+	1,  // 5: pb.CategoryService.CreateCategoryStreamBidirectional:input_type -> pb.CreateCategoryRequest
+	4,  // 6: pb.CategoryService.ListCategories:input_type -> pb.blank
+	5,  // 7: pb.CategoryService.GetCategory:input_type -> pb.CategoryRequest
+	6,  // 8: pb.CategoryService.UpdateCategory:input_type -> pb.UpdateCategoryRequest
+	5,  // 9: pb.CategoryService.DeleteCategory:input_type -> pb.CategoryRequest
+	2,  // 10: pb.CategoryService.CreateCategory:output_type -> pb.CategoryResponse
+	3,  // 11: pb.CategoryService.CreateCategoryStream:output_type -> pb.CategoryList
+	2,  // 12: pb.CategoryService.CreateCategoryStreamBidirectional:output_type -> pb.CategoryResponse
+	3,  // 13: pb.CategoryService.ListCategories:output_type -> pb.CategoryList
+	2,  // 14: pb.CategoryService.GetCategory:output_type -> pb.CategoryResponse
+	2,  // 15: pb.CategoryService.UpdateCategory:output_type -> pb.CategoryResponse
+	7,  // 16: pb.CategoryService.DeleteCategory:output_type -> pb.DeleteCategoryResponse
+	10, // [10:17] is the sub-list for method output_type
+	3,  // [3:10] is the sub-list for method input_type
+	3,  // [3:3] is the sub-list for extension type_name
+	3,  // [3:3] is the sub-list for extension extendee
+	0,  // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_proto_course_category_proto_init() }

@@ -42,6 +42,7 @@ message DeleteCategoryResponse {
 service CategoryService {
     rpc CreateCategory(CreateCategoryRequest) returns (CategoryResponse) {}
     rpc CreateCategoryStream(stream CreateCategoryRequest) returns (CategoryList){}
+    rpc CreateCategoryStreamBidirectional(stream CreateCategoryRequest) returns (stream CategoryResponse){}
     rpc ListCategories(blank) returns (CategoryList){}
     rpc GetCategory(CategoryRequest) returns (CategoryResponse){}
     rpc UpdateCategory (UpdateCategoryRequest) returns (CategoryResponse){}
