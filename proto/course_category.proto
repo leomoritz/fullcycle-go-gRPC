@@ -1,0 +1,53 @@
+// Setup
+syntax = "proto3";
+package pb; //pb = protocolbuffer
+option go_package = "internal/pb";
+
+// Requests & Responses
+message Category {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message CreateCategoryRequest {
+    string name = 1;
+    string description = 2;
+}
+
+message CategoryResponse {
+    Category category = 1;
+}
+
+message CategoryList {
+    repeated Category categories = 1;
+}
+
+message blank{}
+
+message CategoryRequest {
+    string id = 1;
+}
+
+message UpdateCategoryRequest {
+    Category category = 1;
+
+}
+
+message DeleteCategoryResponse {
+    bool isDeleted = 1;
+}
+
+// Services
+service CategoryService {
+    rpc CreateCategory(CreateCategoryRequest) returns (CategoryResponse) {}
+    rpc ListCategories(blank) returns (CategoryList){}
+    rpc GetCategory(CategoryRequest) returns (CategoryResponse){}
+    rpc UpdateCategory (UpdateCategoryRequest) returns (CategoryResponse){}
+    rpc DeleteCategory(CategoryRequest) returns (DeleteCategoryResponse){}
+}
+
+// Comando para gerar os fontes com base neste arquivo: protoc --go_out=. --go-grpc_out=. proto/course_category.proto
+// --go_out=. é a chamada do plugin para o arquivo go parar gerar os arquivos com as entidades (mensagens)
+// --go-grpc_out= gera os arquivos e interfaces para interagir utilizando o gRPC.
+// proto/entities.proto caminho onde está este arquivo

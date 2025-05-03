@@ -63,3 +63,21 @@ func (c *Category) Find(id string) (Category, error) {
 	}
 	return Category{ID: id, Name: name, Description: description}, nil
 }
+
+func (c *Category) Update(category Category) (Category, error) {
+	_, err := c.db.Exec("UPDATE categories set name = $1, description = $2 WHERE id = $3",
+		category.Name, category.Description, category.ID)
+	if err != nil {
+		return Category{}, err
+	}
+	return Category{ID: category.ID, Name: category.Name, Description: category.Description}, nil
+}
+
+func (c *Category) Delete(id string) (bool, error) {
+	_, err := c.db.Exec("DELETE FROM categories WHERE id = $1",
+		id)
+	if err != nil {
+		return false, err
+	}
+	return true, nil
+}
